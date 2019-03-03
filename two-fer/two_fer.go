@@ -9,11 +9,9 @@ import "fmt"
 ShareWith accepts an input string and returns One for X, one for me.
 */
 func ShareWith(name string) string {
-	shareWith := ""
-	if name != "" {
-		shareWith = fmt.Sprintf("One for %s, one for me.", name)
-	} else {
-		shareWith = "One for you, one for me."
+	if name == "" {
+		name = "you"
 	}
+	shareWith := fmt.Sprintf("One for %s, one for me.", name)
 	return shareWith
 }
