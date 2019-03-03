@@ -1,6 +1,5 @@
 /*
-Package hamming implements distance function to
-calculate the hamming distance.
+Package hamming implements distance function to calculate the hamming distance.
 */
 package hamming
 
