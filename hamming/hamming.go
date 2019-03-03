@@ -1,9 +1,14 @@
+/*
+Package hamming implements distance function to
+calculate the hamming distance.
+*/
 package hamming
 
 import "errors"
 
 /*
-Distance comparing two DNA strands and counting how many of the nucleotides are different from their equivalent in the other string.
+Distance comparing two DNA strands and counting how many of the nucleotides are
+different from their equivalent in the other string.
 */
 func Distance(a, b string) (int, error) {
 	if len(a) != len(b) {
