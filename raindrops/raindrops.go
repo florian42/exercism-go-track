@@ -6,7 +6,6 @@ package raindrops
 
 import (
 	"strconv"
-	"strings"
 )
 
 /*
@@ -28,9 +27,9 @@ func Convert(input int) string {
 		output += plong
 	}
 
-	if strings.Contains(output, pling) || strings.Contains(output, plang) || strings.Contains(output, plong) {
-		return output
+	if output == "" {
+		return strconv.Itoa(input)
 	}
 
-	return strconv.Itoa(input)
+	return output
 }
