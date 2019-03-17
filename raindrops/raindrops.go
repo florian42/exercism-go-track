@@ -6,39 +6,31 @@ package raindrops
 
 import (
 	"strconv"
+	"strings"
 )
 
 /*
 Convert converts a number to a string, the contents of which depend on the number's factors.
 */
 func Convert(input int) string {
-	factors := getFactors(input)
-	output := ""
-	for _, factor := range factors {
-		switch factor {
-		case 3:
-			output += "Pling"
-		case 5:
-			output += "Plang"
-		case 7:
-			output += "Plong"
-		}
-	}
-	if output == "" {
-		output = strconv.Itoa((factors[len(factors)-1]))
-	}
-	return output
-}
+	const pling = "Pling"
+	const plang = "Plang"
+	const plong = "Plong"
 
-/**
-getFactors returns all the factors of input with no remainder after division
-*/
-func getFactors(input int) []int {
-	factors := make([]int, input)
-	for i := 1; i <= input; i++ {
-		if input%i == 0 {
-			factors = append(factors, i)
-		}
+	output := ""
+	if input%3 == 0 {
+		output += pling
 	}
-	return factors
+	if input%5 == 0 {
+		output += plang
+	}
+	if input%7 == 0 {
+		output += plong
+	}
+
+	if strings.Contains(output, pling) || strings.Contains(output, plang) || strings.Contains(output, plong) {
+		return output
+	}
+
+	return strconv.Itoa(input)
 }
