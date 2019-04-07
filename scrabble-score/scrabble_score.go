@@ -26,8 +26,6 @@ func Score(input string) int {
 			sum += 8
 		case 'Q', 'Z':
 			sum += 10
-		default:
-			sum += 0
 		}
 	}
 	return sum
